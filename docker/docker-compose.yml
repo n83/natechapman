@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  natechapman_portfolio:
+    container_name: natechapman_portfolio
+    image: natechapman/website
+    ports:
+      - 8000:80
+    build:
+      context: .
+      dockerfile: .docker/website-frontend.dockerfile
+
+  #  entrypoint: ['/bin/sh', 'npm i && npm run dev']
+  #  ports:
+  #    - 8000:8000
+  #  working_dir: /srv/app
+  #  volumes: 
+  #    - type: bind
+  #      source: ./website_frontend/*
+  #      target: /srv/app
+  #  tty: true
