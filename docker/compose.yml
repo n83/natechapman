@@ -1,13 +1,12 @@
 version: "3.8"
 services:
-  natechapman_portfolio:
-    container_name: natechapman_portfolio
-    image: natechapman/website
+  natechapman_portfolio_website:
+    image: n8erade/natechapman-portfolio:latest
     ports:
-      - 8000:80
+      - 8080:80
     build:
-      context: .
-      dockerfile: .docker/website-frontend.dockerfile
+      context: ../website
+      dockerfile: ../docker/website.dockerfile
 
   #  entrypoint: ['/bin/sh', 'npm i && npm run dev']
   #  ports:
@@ -18,3 +17,7 @@ services:
   #      source: ./website_frontend/*
   #      target: /srv/app
   #  tty: true
+
+
+
+  #docker.io/n8erade/private/natechapman-portfolio-website:latest
